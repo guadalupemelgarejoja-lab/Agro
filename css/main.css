@@ -2849,3 +2849,70 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
 }
+/* 1. Asegurar que las imágenes siempre se adapten */
+.product-img {
+    width: 100%; /* Ocupa todo el ancho de la columna */
+    height: auto;
+    /* Esto es importante para que las imágenes no se estiren */
+    object-fit: cover; 
+}
+
+/* 2. Estilo del botón "Añadir" */
+.product-btn {
+    /* Fondo y color del texto (ejemplo) */
+    background-color: #ff5722; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+    /* PADDING y TAMAÑO de FUENTE RELATIVOS (EM) */
+    padding: 0.8em 1.5em; 
+    font-size: 1.1rem; 
+    
+    /* Asegurar un ancho mínimo para que sea fácil de tocar */
+    min-width: 120px; 
+    
+    /* Margen superior para separarlo del precio */
+    margin-top: 10px; 
+    
+    /* Centrarlo dentro de .portfolio-info si es necesario */
+    display: inline-block;
+}
+
+/* 3. Estilo al presionar (para móviles) */
+.product-btn:active {
+    background-color: #e64a19; /* Ligeramente más oscuro al presionar */
+    transform: scale(0.98); /* Pequeño efecto de "presión" */
+}
+/* Media Query para pantallas pequeñas (ej. smartphones) */
+@media (max-width: 576px) {
+
+    /* Ajustar el padding de la tarjeta para que no quede tan pegada al borde */
+    .portfolio-content {
+        padding: 15px; 
+    }
+
+    /* Asegurar que el botón ocupe todo el ancho de la tarjeta en móvil */
+    .product-btn {
+        width: 100%;
+        font-size: 1rem; /* Reducir ligeramente el texto para móviles */
+        padding: 15px 10px; /* Aumentar el padding vertical (altura) para el dedo */
+    }
+
+    /* Asegurar que la información de producto se vea ordenada */
+    .portfolio-info h4 {
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+    }
+    
+    .portfolio-info p {
+        font-size: 0.95rem;
+    }
+
+    /* Asegurar un espaciado adecuado entre las tarjetas */
+    .row.gy-4 > [class*="col-"] {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
